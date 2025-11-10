@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile | BSIT Student</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     
     <style>
         /*
-         * GENERAL STYLES: Sets up smooth scrolling and base text color
+         * GENERAL STYLES
          */
         html {
             scroll-behavior: smooth;
         }
         body {
-            /* Base background is light gray for high visibility */
-            background-color: #f8f9fa; 
-            color: #333333; 
+            background-color: #f8f9fa; /* Light gray base */
+            color: #333333; /* Dark text for high visibility */
             font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             padding-top: 56px; /* Space for fixed navbar */
         }
 
         /*
-         * ACCENT COLORS (Vibrant Coral/Pink for a friendly, lively touch)
+         * ACCENT COLORS (Vibrant Coral/Pink)
          */
         :root {
             --accent-color: #ff6b6b; /* Bright Coral/Pink */
@@ -32,38 +32,32 @@
 
 
         /*
-         * HOME SECTION (Dramatic dark look for a great landing page)
+         * HOME SECTION (Dark for impact, with text visibility guaranteed)
          */
         #home {
-            /* Subtle dark overlay for contrast */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-            /* CHANGE THIS IMAGE URL IF YOU WANT A DIFFERENT BACKGROUND */
             url('https://images.unsplash.com/photo-1542435503-921d58fb32aa?auto=format&fit=crop&q=80&w=1600&h=1000') 
             no-repeat center center/cover;
             height: 100vh;
             color: #ffffff;
-            /* Ensure maximum visibility for text */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
         }
-
-        /* Ensure the Home section title is stark white */
         #home h1, #home p {
             color: #ffffff !important;
         }
 
 
         /*
-         * NAVIGATION BAR STYLES (Clean white bar with pop)
+         * NAVIGATION BAR STYLES
          */
         .navbar {
-            background-color: #ffffff !important; /* Clean White Bar */
+            background-color: #ffffff !important; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .navbar-nav .nav-link {
-            margin-left: 15px;
             color: #333333 !important; 
-            transition: color 0.3s ease-in-out, border-bottom 0.3s;
+            transition: color 0.3s, border-bottom 0.3s;
             font-weight: 500;
         }
 
@@ -75,11 +69,11 @@
 
 
         /*
-         * CARD STYLES (For Skills/Info - Clean, white, and professional)
+         * CARD STYLES (Used in Skills section)
          */
         .card {
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-            background-color: #ffffff; /* Clean white cards for visibility */
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #ffffff; 
             color: #333333;
             border: none; 
             border-radius: 10px; 
@@ -92,7 +86,7 @@
 
 
         /*
-         * HEADINGS AND TEXT
+         * HEADINGS, LISTS, and SECTIONS
          */
         h2, h3 {
             color: #333333;
@@ -101,23 +95,17 @@
             padding-bottom: 5px;
             margin-bottom: 25px;
         }
-
-        /* Enhancing list item text for Personal Info */
         .list-group-item {
             background-color: #ffffff;
             border-color: #eeeeee; 
             color: #333333;
         }
-
         .list-group-item strong {
             color: var(--accent-color);
         }
-
-        /* Ensure all main content sections use the soft gray background */
+        /* Ensure all content sections use the soft gray background */
         #about, #skills, #contact, #personal-info {
             background-color: #f8f9fa;
-            padding-top: 5rem !important;
-            padding-bottom: 5rem !important;
         }
     </style>
 </head>
@@ -142,11 +130,11 @@
         </div>
     </nav>
 
-    <section id="home" class="vh-100 d-flex align-items-center text-center">
+    <section id="home" class="vh-100 d-flex align-items-center text-center p-5">
         <div class="container">
-            <h1 class="display-3 fw-bold text-white">Hi, I'm <span style="color: var(--accent-color);">Krishelle P. Villafloor</span></h1>
-            <p class="lead text-white">A BSIT Student | Debugger of Life's Little Glitches</p>
-            <a href="#about" class="btn btn-outline-light btn-lg mt-3">Explore More</a>
+            <h1 class="display-3 fw-bold">Hi, I'm <span style="color: var(--accent-color);">Krishelle P. Villafloor</span></h1>
+            <p class="lead">A BSIT Student | Debugger of Life's Little Glitches</p>
+            <a href="#about" class="btn btn-lg mt-3" style="background-color: var(--accent-color); color: white;">Explore More</a>
         </div>
     </section>
 
@@ -154,7 +142,7 @@
         <div class="container">
             <h2 class="text-center">🤔 About Me</h2>
             <p class="lead text-center mb-5">
-                I'm the kind of person who sees a problem and immediately thinks, "There's a shortcut for that." I'm *passionate about learning new things* and bringing a positive energy to any team. I might not be a coding expert yet, but I'm an expert at *solving problems*, managing deadlines, and making sure everyone gets a reply in the group chat!
+                I'm the kind of person who sees a problem and immediately thinks, "*There's a shortcut for that.*" I'm passionate about learning new things and bringing a positive energy to any team. I might not be a coding expert yet, but I'm an expert at *solving problems*, managing deadlines, and making sure everyone gets a reply in the group chat!
             </p>
         </div>
     </section>
@@ -181,7 +169,6 @@
                     </ul>
                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -234,7 +221,7 @@
             <a href="mailto:your_email@example.com" class="btn btn-lg" style="background-color: var(--accent-color); color: white;">
                 Send Me an Email
             </a>
-            </div>
+        </div>
     </section>
 
     <footer class="p-3 bg-dark text-white text-center">
