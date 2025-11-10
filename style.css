@@ -1,79 +1,80 @@
-/* * GENERAL STYLES: Sets up the dark mode foundation
+/*
+ * GENERAL STYLES: Sets up smooth scrolling and a clean, light base
  */
 html {
     scroll-behavior: smooth;
 }
 body {
-    /* Deep space background */
-    background-color: #121212; 
-    color: #f0f0f0; /* Light text on dark background */
-    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-    line-height: 1.8;
+    /* Soft, professional gray background */
+    background-color: #f5f5f5; 
+    color: #333333; /* Dark text for high visibility */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
 /*
- * ACCENT COLORS (Neon Tech Look)
+ * ACCENT COLORS (Vibrant Coral/Pink for a friendly, lively touch)
  */
 :root {
-    --primary-dark: #1f1f1f; /* Slightly lighter dark for contrast sections */
-    --accent-neon: #00ffaa; /* Vibrant neon green/cyan */
-    --text-light: #d4d4d4;
+    --accent-color: #ff6b6b; /* Bright Coral/Pink */
+    --accent-hover: #e55a5a;
+    --card-bg: #ffffff; /* Clean white for cards */
 }
 
 
 /*
- * HOME SECTION (Ensures maximum contrast and effect)
+ * HOME SECTION (Ensures text visibility on a vibrant image)
  */
 #home {
-    /* Overlay on image to ensure dark theme consistency */
-    background: linear-gradient(rgba(0, 0, 0, 0.😎, rgba(0, 0, 0, 0.8)),
-    /* Use your high-quality, relevant background image here */
-    url('https://images.unsplash.com/photo-1517430816045-df4b7de1160a?auto=format&fit=crop&q=80&w=1600&h=1000')
+    /* Subtle dark overlay for contrast */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    /* Use a high-quality, relevant background image here */
+    url('https://images.unsplash.com/photo-1542435503-921d58fb32aa?auto=format&fit=crop&q=80&w=1600&h=1000') 
     no-repeat center center/cover;
     height: 100vh;
     color: #ffffff;
-    /* Adding a subtle glow to the main text/title */
-    text-shadow: 0 0 5px rgba(0, 255, 170, 0.3);
+    /* Adding a light shadow to main text for readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 
 /*
- * NAVIGATION BAR STYLES (Sleek, Fixed Dark Bar)
+ * NAVIGATION BAR STYLES (Clean white bar with pop)
  */
 .navbar {
-    background-color: #121212 !important; /* Force a very dark, opaque bar */
-    border-bottom: 1px solid var(--primary-dark);
+    background-color: #ffffff !important; /* Clean White Bar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
 .navbar-nav .nav-link {
     margin-left: 15px;
-    color: var(--text-light) !important; /* Ensure visibility */
-    transition: color 0.3s ease-in-out, transform 0.2s;
-    font-weight: 600;
+    color: #333333 !important; /* Dark text for visibility */
+    transition: color 0.3s ease-in-out, border-bottom 0.3s;
+    font-weight: 500;
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--accent-neon) !important; /* Pop with the neon color */
-    transform: translateY(-2px); /* Subtle lift on hover */
-    text-shadow: 0 0 8px var(--accent-neon); /* Glowing effect */
+    color: var(--accent-color) !important; /* Pop with the coral color */
+    border-bottom: 2px solid var(--accent-color); /* Underline effect */
+    padding-bottom: 3px;
 }
 
 
 /*
- * CARD STYLES (For Skills/Info - Making them pop off the screen)
+ * CARD STYLES (For Skills/Info - Clean, white, and professional)
  */
 .card {
-    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-    background-color: var(--primary-dark); /* Dark background for cards */
-    color: var(--text-light);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle boundary */
-    border-radius: 12px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    background-color: var(--card-bg); 
+    color: #333333;
+    border: none; /* No ugly default border */
+    border-radius: 10px; /* Softly rounded corners */
 }
 
 .card:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    /* Neon box shadow for a dramatic "hover" effect */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-neon); 
+    transform: translateY(-5px); /* Gentle lift */
+    /* Soft shadow using the accent color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 5px var(--accent-color); 
 }
 
 
@@ -81,21 +82,27 @@ body {
  * HEADINGS AND TEXT
  */
 h2, h3 {
-    color: #ffffff; /* White headings */
-    border-bottom: 3px solid var(--accent-neon); /* Neon line under titles */
+    color: #333333; /* Dark headings for readability */
+    border-bottom: 3px solid var(--accent-color); /* Lively coral line under titles */
     display: inline-block;
-    padding-bottom: 8px;
-    margin-bottom: 30px;
-    letter-spacing: 1.5px; /* Spacing for a modern feel */
+    padding-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 /* Enhancing list item text for Personal Info */
 .list-group-item {
-    background-color: transparent; /* Makes the list items seamless on the dark background */
-    border-color: rgba(255, 255, 255, 0.05); /* Very faint separators */
-    color: var(--text-light);
+    background-color: var(--card-bg); /* Match the white card background */
+    border-color: #eeeeee; /* Very faint separators */
+    color: #333333;
 }
 
 .list-group-item strong {
-    color: var(--accent-neon);
+    color: var(--accent-color);
+}
+
+/* Ensure all main content sections use the soft gray background */
+#about, #skills, #contact, #personal-info {
+    background-color: #f5f5f5; /* Match body background */
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
 }
