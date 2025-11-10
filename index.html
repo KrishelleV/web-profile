@@ -1,126 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Profile | BSIT Student</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a2e0e9a17a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | BSIT Student</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <style>
+        /*
+         * GENERAL STYLES: Sets up smooth scrolling and base text color
+         */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            /* Base background is light gray for high visibility */
+            background-color: #f8f9fa; 
+            color: #333333; 
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding-top: 56px; /* Space for fixed navbar */
+        }
+
+        /*
+         * ACCENT COLORS (Vibrant Coral/Pink for a friendly, lively touch)
+         */
+        :root {
+            --accent-color: #ff6b6b; /* Bright Coral/Pink */
+            --accent-hover: #e55a5a;
+        }
+
+
+        /*
+         * HOME SECTION (Dramatic dark look for a great landing page)
+         */
+        #home {
+            /* Subtle dark overlay for contrast */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            /* CHANGE THIS IMAGE URL IF YOU WANT A DIFFERENT BACKGROUND */
+            url('https://images.unsplash.com/photo-1542435503-921d58fb32aa?auto=format&fit=crop&q=80&w=1600&h=1000') 
+            no-repeat center center/cover;
+            height: 100vh;
+            color: #ffffff;
+            /* Ensure maximum visibility for text */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
+        }
+
+        /* Ensure the Home section title is stark white */
+        #home h1, #home p {
+            color: #ffffff !important;
+        }
+
+
+        /*
+         * NAVIGATION BAR STYLES (Clean white bar with pop)
+         */
+        .navbar {
+            background-color: #ffffff !important; /* Clean White Bar */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-nav .nav-link {
+            margin-left: 15px;
+            color: #333333 !important; 
+            transition: color 0.3s ease-in-out, border-bottom 0.3s;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important; 
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 3px;
+        }
+
+
+        /*
+         * CARD STYLES (For Skills/Info - Clean, white, and professional)
+         */
+        .card {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            background-color: #ffffff; /* Clean white cards for visibility */
+            color: #333333;
+            border: none; 
+            border-radius: 10px; 
+        }
+
+        .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 5px var(--accent-color); 
+        }
+
+
+        /*
+         * HEADINGS AND TEXT
+         */
+        h2, h3 {
+            color: #333333;
+            border-bottom: 3px solid var(--accent-color); 
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* Enhancing list item text for Personal Info */
+        .list-group-item {
+            background-color: #ffffff;
+            border-color: #eeeeee; 
+            color: #333333;
+        }
+
+        .list-group-item strong {
+            color: var(--accent-color);
+        }
+
+        /* Ensure all main content sections use the soft gray background */
+        #about, #skills, #contact, #personal-info {
+            background-color: #f8f9fa;
+            padding-top: 5rem !important;
+            padding-bottom: 5rem !important;
+        }
+    </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
-  <!-- NAVBAR -->
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MyProfile</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#personal-info">Personal Info</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
+<body data-bs-spy="scroll" data-bs-target="#navMenu" data-bs-offset="50">
 
-  <!-- HOME -->
-  <section id="home" class="vh-100 d-flex align-items-center text-center text-white bg-dark">
-    <div class="container">
-      <img src="assets/profile.jpg" alt="Profile" class="rounded-circle shadow-lg mb-4" width="150">
-      <h1 class="fw-bold">Hi, I'm <span class="text-info">Krishelle P. Villaflor</span></h1>
-      <p class="lead">A BSIT Student | Debugger of Life's Little Glitches</p>
-      <a href="#about" class="btn btn-info mt-3">Explore More</a>
-    </div>
-  </section>
-
-  <!--PERSONAL INFO-->
-  <section id="personal-info" class="p-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Personal Information</h2>
-        
-        <div class="row">
-            <div class="col-lg-6 mx-auto">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <strong>Age:</strong> 20 (Still figuring things out)
-                    </li>
-                    <li class="list-group-item">
-                        <strong>Location:</strong> Poblacion, Cauayan, Negros Occidental. 
-                    <li class="list-group-item">
-                        <strong>Status:</strong> My current relationship status is "????"
-                    </li>
-                    <li class="list-group-item">
-                        <strong>Hobbies:</strong> Sleeping and Experimenting new recipe.
-                    </li>
-                    <li class="list-group-item">
-                        <strong>Motto:</strong> "Everything happens with God's purpose and reason."
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyProfile</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#personal-info">Personal Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
-        
-    </div>
-</section>
+    </nav>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">A Little About Me</h2>
-      <p class="lead">I'm the person who actually reads the instructions. I'm generally passionate about learning new things and getting stuff done without accidentally breaking the system (eme haha). I enjoy figuring out how things work and trying to make everyday processes smoother. I might not be a coding expert, but I am an expert at solving problems, managing my time (mostly), and bringing a good vibe to the group.</p>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-5">My Skills</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card shadow-sm border-0 p-3">
-            <i class="fa-solid fa-code fa-3x text-info mb-3"></i>
-            <h5>Problem Solving</h5>
-            <p>I'm really good at Googling and asking ChatGpt's help(haha), and I rarely panic when the Wi-Fi dies.</p>
-          </div>
+    <section id="home" class="vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-white">Hi, I'm <span style="color: var(--accent-color);">Krishelle P. Villafloor</span></h1>
+            <p class="lead text-white">A BSIT Student | Debugger of Life's Little Glitches</p>
+            <a href="#about" class="btn btn-outline-light btn-lg mt-3">Explore More</a>
         </div>
-        <div class="col-md-4">
-          <div class="card shadow-sm border-0 p-3">
-            <i class="fa-solid fa-database fa-3x text-info mb-3"></i>
-            <h5>Communication</h5>
-            <p>Clearly explaining complex topics to anyone who needs to hear it.</p>
-          </div>
+    </section>
+
+    <section id="about" class="p-5">
+        <div class="container">
+            <h2 class="text-center">🤔 About Me</h2>
+            <p class="lead text-center mb-5">
+                I'm the kind of person who sees a problem and immediately thinks, "There's a shortcut for that." I'm *passionate about learning new things* and bringing a positive energy to any team. I might not be a coding expert yet, but I'm an expert at *solving problems*, managing deadlines, and making sure everyone gets a reply in the group chat!
+            </p>
         </div>
-        <div class="col-md-4">
-          <div class="card shadow-sm border-0 p-3">
-            <i class="fa-solid fa-shield-halved fa-3x text-info mb-3"></i>
-            <h5>Teamwork</h5>
-            <p>I'm the designated hype person, and I actually reply to the group chat.</p>
-          </div>
+    </section>
+
+    <section id="personal-info" class="p-5">
+        <div class="container">
+            <h2 class="text-center">A Bit More About Me</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <ul class="list-group list-group-flush shadow-sm">
+                        <li class="list-group-item">
+                            <strong>Age:</strong> [Your Age]
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Location:</strong> [Your City, Province]
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Status:</strong> BSIT Student / High School Student (My current relationship status is "committed to my school project.")
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Motto:</strong> "Everything happens with God's purpose and reason."
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Contact Me</h2>
-      <p>Let’s connect! You can reach me at:</p>
-      <p><i class="fa-solid fa-envelope text-info"></i> villaflorkrishelle@gmail.com</p>
-      <p><i class="fa-brands fa-facebook text-info"></i> <a href="#" class="text-dark text-decoration-none">https://www.facebook.com/krishelle.villaflor</a></p>
-    </div>
-  </section>
+    <section id="skills" class="p-5">
+        <div class="container">
+            <h2 class="text-center">🧠 My Skills</h2>
+            <p class="lead text-center mb-5">
+                I specialize in getting the job done (and the occasional digital miracle).
+            </p>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">© 2025 Krishelle Villaflor. All Rights Reserved.</p>
-  </footer>
+            <div class="row text-center g-4">
+                
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Problem Solving</h3>
+                            <p class="card-text">I'm really good at Googling, and I rarely panic when the Wi-Fi dies.</p>
+                        </div>
+                    </div>
+                </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Communication</h3>
+                            <p class="card-text">I can translate "geek-speak" into regular human language.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Teamwork</h3>
+                            <p class="card-text">I'm the designated hype person, and I actually reply to the group chat.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="p-5">
+        <div class="container text-center">
+            <h2 class="text-center">✉️ Contact Me</h2>
+            <p class="lead mb-4">
+                Let's connect! I promise I'm better at responding to emails than I am at answering calls from unknown numbers.
+            </p>
+            <a href="mailto:your_email@example.com" class="btn btn-lg" style="background-color: var(--accent-color); color: white;">
+                Send Me an Email
+            </a>
+            </div>
+    </section>
+
+    <footer class="p-3 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">Designed by Krishelle P. Villafloor &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
