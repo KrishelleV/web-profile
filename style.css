@@ -1,0 +1,93 @@
+/*
+ * GENERAL STYLES: Sets up smooth scrolling for navigation links
+ */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    /* Optional: Use a clean, tech-friendly font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+
+/*
+ * ACCENT COLOR DEFINITION (Vibrant Tech Blue/Cyan)
+ * Use this color (#00bcd4) for borders, buttons, and text highlights.
+ */
+:root {
+    --accent-color: #00bcd4; /* A bright cyan/blue */
+    --hover-color: #008394;
+}
+
+
+/*
+ * HOME SECTION (Keeping your background, but ensuring text readability)
+ */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    /* Use a high-quality, relevant background image here */
+    url('https://images.unsplash.com/photo-1519389950473-47ba02777821?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80')
+    no-repeat center center/cover;
+    height: 100vh; /* Ensures it fills the screen height */
+    color: #ffffff; /* Ensures text is bright white */
+}
+
+
+/*
+ * NAVIGATION BAR STYLES (Making the links pop)
+ */
+.navbar-nav .nav-link {
+    margin-left: 15px;
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important; /* Use the accent color on hover */
+    /* text-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Optional subtle glow */
+}
+
+/* Style for the current active link (Optional) */
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+
+/*
+ * CARD STYLES (Used for skills/info sections for a clean look)
+ */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 0 5px var(--accent-color); /* Stronger, colored shadow */
+}
+
+
+/*
+ * HEADINGS AND TEXT
+ */
+h2, h3 {
+    color: #343a40; /* Darker text for readability */
+    border-bottom: 3px solid var(--accent-color); /* Highlight under major headings */
+    display: inline-block; /* Makes the border only under the text width */
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+/* Adding a subtle border for the list items in Personal Info */
+.list-group-item strong {
+    color: var(--accent-color);
+}
